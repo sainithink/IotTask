@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "96e1df2c-80fe-4447-9c60-a69894072036",
+		"name": "IoT Research _Tasks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API to get a list of users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/users/userslist",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"userslist"
+					]
+				},
+				"description": "localhost:3000/api/users/userslist"
+			},
+			"response": []
+		},
+		{
+			"name": "API to get a list of categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/users/categorieslist",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"categorieslist"
+					]
+				},
+				"description": "localhost:3000/api/users/categorieslist"
+			},
+			"response": []
+		},
+		{
+			"name": "API to create a new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Name\":\"Name\",\r\n\"Email\":\"saianiatahsin.karra@gmail.com\",\r\n\"password\":\"password\",\r\n\"Role\":\"Student\",\r\n\"Category\":\"5ed7874a7752004b34686ff3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/addusers",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"addusers"
+					]
+				},
+				"description": "localhost:3000/api/users/addusers"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Categories",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"Name\":\"Mobile\"\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/addcategory",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"addcategory"
+					]
+				},
+				"description": "localhost:3000/api/users/addcategory"
+			},
+			"response": []
+		},
+		{
+			"name": "API to Update new user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"category\":\"5ed7874a7752004b34686ff4\",\r\n\"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/updateusers/5ed77685f1b16e3f70aef605?",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"updateusers",
+						"5ed77685f1b16e3f70aef605"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				},
+				"description": "localhost:3000/api/users/updateusers/5ed77685f1b16e3f70aef605?"
+			},
+			"response": []
+		},
+		{
+			"name": "API to Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/users/deleteuser/5ed77685f1b16e3f70aef605",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"deleteuser",
+						"5ed77685f1b16e3f70aef605"
+					]
+				},
+				"description": "localhost:3000/api/users/deleteuser/5ed77685f1b16e3f70aef607"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
