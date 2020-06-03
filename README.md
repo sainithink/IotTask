@@ -78,6 +78,10 @@ Press CTRL + C to stop the process.
 ```
 **Note:**  `YOUR_DB_CONNECTION_STRING` will be your MongoDB connection string.
 
+## API Documentation
+
+Please check it <a href="https://documenter.getpostman.com/view/11010679/SztG571r?version=latest">Here</a>.
+
 ## Bugs or improvements
 
 Every project needs improvements, Feel free to report any bugs or improvements<a href="mailto:sainithin.karra@gmail.com">@Sai Nithin</a>
