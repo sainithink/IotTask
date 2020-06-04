@@ -67,7 +67,7 @@ exports.categorieslist = catchAsync(async (req, res) => {
 	// Sanitize fields.
 	sanitizeBody("Name").escape(),
 	sanitizeBody("Role").escape(),
-    sanitizeBody("email").escape(),
+    sanitizeBody("Email").escape(),
     sanitizeBody("Category").escape(),
 	sanitizeBody("password").escape(),
 	// Process request after validation and sanitization.
@@ -109,24 +109,34 @@ exports.updateusers = [
         console.log(req.body);
         const user = db.Users.findById(req.params.id);
         if(user){
-            if(req.body.password){
+            
+            if(req.body.Name){
                 const isemail = await db.Users.findOne({Email:req.body.Email});
                 console.log(`Email:${isemail}`);
                 if(isemail == null){
                     const iscategory = await db.Categories.findOne({_id:req.body.category}).count();
                     if(iscategory){
-                        req.body.password = await bcrypt.hash(req.body.password, 10);
+                        // req.body.password = await bcrypt.hash(req.body.password, 10);
                         const updated = await db.Users.findByIdAndUpdate(req.params.id,req.body);
                         return apiResponse.successResponseWithData(res,'Updated succefully .',updated);
-                    }else{
+                    }
+                    if(req.body.Role){
+                        console.log(req.body.Role);
+                        const updated = await db.Users.findByIdAndUpdate(req.params.id,req.body);
+                        return apiResponse.successResponseWithData(res,'Updated succefully .',updated);
+                    }
+                    if(req.body.Email){
+                        const updated = await db.Users.findByIdAndUpdate(req.params.id,req.body);
+                        return apiResponse.successResponseWithData(res,'Updated succefully .',updated);
+                    }
+                    else{
                         return apiResponse.validationErrorWithData(res, "Category Id Doesent Match our records.");
-
                     }
                 }else{
                     return apiResponse.validationErrorWithData(res, "Email Id Already Exists.");
                 }
             }else{
-                return apiResponse.validationErrorWithData(res, "Password Must be Specified.");
+                return apiResponse.validationErrorWithData(res, "Name Must be Specified.");
             }
 
         }else{
